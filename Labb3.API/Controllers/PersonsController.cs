@@ -77,6 +77,7 @@ namespace Labb3.API.Controllers
             }
         }
 
+        //Fungerar
         [HttpGet("links/{id}")]
         public async Task<IActionResult> GetLinks(int id)
         {

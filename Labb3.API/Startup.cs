@@ -39,6 +39,7 @@ namespace Labb3.API
 
             //Databases
             services.AddScoped<IPersonRepository<Person>, PersonRepository>();
+            services.AddScoped<IPersonHobbyRepository<PersonHobby>, PersonHobbyRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

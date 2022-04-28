@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Labb3.API.Services
 {
-    public class PersonHobbyRepository : IPersonHobbyRepository<PersonHobby>
+    public class PersonHobbyRepository : ILabbTreRepository<PersonHobby>
     {
         private Labb3DbContext _labb3DbContext;
 
@@ -16,7 +16,7 @@ namespace Labb3.API.Services
         {
             _labb3DbContext = labb3DbContext;
         }
-        public async Task<PersonHobby> AddPersonToInterest(PersonHobby personHobby)
+        public async Task<PersonHobby> Add(PersonHobby personHobby)
         {
             var newPersonHobby = await _labb3DbContext.PersonHobbies.AddAsync(personHobby);
             await _labb3DbContext.SaveChangesAsync();

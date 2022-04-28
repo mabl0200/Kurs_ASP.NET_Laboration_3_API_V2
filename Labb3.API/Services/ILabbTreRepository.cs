@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Labb3.API.Services
 {
-    public interface IPersonHobbyRepository<T>
+    public interface ILabbTreRepository<T>
     {
         Task<IEnumerable<T>> GetAll();
 
-        Task<T> AddPersonToInterest(PersonHobby personHobby);
+        Task<T> Add(T newEntity);
 
         Task<T> GetSingle(int id);
     }

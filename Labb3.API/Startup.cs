@@ -1,4 +1,6 @@
 using Labb3.API.Models;
+using Labb3.API.Services;
+using Labb3.Model;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -27,10 +29,16 @@ namespace Labb3.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(options
+                => options.SerializerSettings.ReferenceLoopHandling
+                = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
+            //Entity Framework SQL Provider
             services.AddDbContext<Labb3DbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("Connection")));
+
+            //Databases
+            services.AddScoped<IPersonRepository<Person>, PersonRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

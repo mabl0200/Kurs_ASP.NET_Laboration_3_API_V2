@@ -6,11 +6,11 @@ using System.Text;
 
 namespace Labb3.Model
 {
-    public class Interest
+    public class Hobby
     {
         //Varje intresse ska ha en titel och en kort beskrivning
         [Key]
-        public int InterestId { get; set; }
+        public int HobbyId { get; set; }
 
         [Required]
         public string Title { get; set; }
@@ -24,7 +24,7 @@ namespace Labb3.Model
 
         /*Varje person ska kunna vara kopplad till ett valfritt antal intressen
          och varje intresse ska kunna vara kopplad till flera personer vilket skapar ett Many-to-Many relationship.
-        En kopplingstabell skapas som länk mellan Person och Interest*/
-        public ICollection<PersonInterest> PersonInterests { get; set; }
+        En kopplingstabell skapas som länk mellan Person och Hobby*/
+        public ICollection<PersonHobby> PersonHobbies { get; set; }
     }
 }

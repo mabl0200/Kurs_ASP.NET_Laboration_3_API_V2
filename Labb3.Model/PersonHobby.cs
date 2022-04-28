@@ -5,17 +5,17 @@ using System.Text;
 
 namespace Labb3.Model
 {
-    public class PersonInterest
+    public class PersonHobby
     {
         [Key]
-        public int PersonInterestId { get; set; }
+        public int PersonHobbyId { get; set; }
 
         [Required]
         public int PersonId { get; set; }
         public Person Person { get; set; }
 
         [Required]
-        public int InterestId { get; set; }
-        public Interest Interest { get; set; }
+        public int HobbyId { get; set; }
+        public Hobby Hobby { get; set; }
     }
 }

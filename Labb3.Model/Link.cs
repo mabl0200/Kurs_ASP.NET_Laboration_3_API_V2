@@ -15,14 +15,12 @@ namespace Labb3.Model
         public string URL { get; set; }
 
         //En länk ska vara kopplad till en person...
-        [Required]
         public int PersonId { get; set; }
         public Person Person { get; set; }
 
         //..och till ett visst intresse
-        [Required]
-        public int InterestId { get; set; }
-        public Interest Interest { get; set; }
+        public int HobbyId { get; set; }
+        public Hobby Hobby { get; set; }
 
         
     }

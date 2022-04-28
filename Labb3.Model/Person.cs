@@ -27,10 +27,10 @@ namespace Labb3.Model
 
         /*Varje person ska kunna vara kopplad till ett valfritt antal intressen
          och varje intresse ska kunna vara kopplad till flera personer vilket skapar ett Many-to-Many relationship.
-        En kopplingstabell skapas som länk mellan Person och Interest*/
+        En kopplingstabell skapas som länk mellan Person och Hobby*/
         
         //One to many
-        public ICollection<PersonInterest> PersonsInterests { get; set; }
+        public ICollection<PersonHobby> PersonHobbies { get; set; }
 
     }
 }
